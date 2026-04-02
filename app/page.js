@@ -1,4 +1,4 @@
-import { getAllContent } from '../lib/markdown';
+import { getAllContent } from '@/lib/markdown';
 
 export default function Home() {
   const posts = getAllContent();
@@ -9,12 +9,12 @@ export default function Home() {
       </header>
       <main className="max-w-6xl mx-auto">
         {posts.length === 0 ? (
-          <p className="font-mono opacity-50">המערכת ריקה. תזריקי קבצי Markdown לתיקיית content.</p>
+          <p className="font-mono opacity-50 text-right">המערכת ריקה. תזריקי קבצי Markdown לתיקיית content.</p>
         ) : (
           posts.map(post => (
             <a key={post.slug} href={`/posts/${post.category}/${post.slug}`} className="block border-b border-black/10 py-10 hover:italic transition-all">
-              <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter">{post.title}</h2>
-              <p className="font-mono text-xs opacity-40 mt-2">{post.category} // {post.date}</p>
+              <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-right">{post.title}</h2>
+              <p className="font-mono text-xs opacity-40 mt-2 text-right">{post.category} // {post.date}</p>
             </a>
           ))
         )}
