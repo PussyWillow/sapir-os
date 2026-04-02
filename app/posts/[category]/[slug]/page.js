@@ -1,4 +1,4 @@
-import { getContentBySlug } from '../../../../lib/markdown';
+import { getContentBySlug } from '@/lib/markdown';
 import { notFound } from 'next/navigation';
 
 export default function Post({ params }) {
@@ -12,7 +12,7 @@ export default function Post({ params }) {
       <header className="mb-12">
         <a href="/" className="font-mono text-xs opacity-50 hover:opacity-100 italic">← Back to Index</a>
       </header>
-      <article className="max-w-4xl mx-auto">
+      <article className="max-w-4xl mx-auto text-right" dir="rtl">
         <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] mb-12">
           {post.title}
         </h1>
